@@ -1,4 +1,6 @@
-name: blender-fake-addon
+name: test-addon
+  env:
+    BL_ADDON: "io_scene_obj"
 
 on: 
   push:
@@ -6,8 +8,6 @@ on:
     - cron: '0 0 * * *'
 
 jobs:
-#   env:
-#     BL_ADDON: "io_scene_obj"
   build:
     runs-on: ${{ matrix.os }}
     strategy:
