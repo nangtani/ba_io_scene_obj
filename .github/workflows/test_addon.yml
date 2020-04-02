@@ -42,4 +42,4 @@ jobs:
         BL_ADDON: "io_scene_obj"
       run: |
         git submodule update --init --recursive
-        python scripts/test_addon.py ${{ BL_ADDON }} ${{ matrix.blender-version }}
+        python scripts/test_addon.py $BL_ADDON ${{ matrix.blender-version }}
