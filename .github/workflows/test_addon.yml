@@ -39,4 +39,5 @@ jobs:
 
     - name: Test Blender ${{ matrix.blender-version }} with pytest
       run: |
+        git submodule update --init --recursive
         python scripts/test_addon.py io_scene_obj ${{ matrix.blender-version }}
