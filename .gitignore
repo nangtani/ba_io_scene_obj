@@ -1,0 +1,9 @@
+temp.txt
+*.pyc
+blender_build
+__pycache__
+*.zip
+.pytest_cache
+~*
+.coverage
+coverage.xml

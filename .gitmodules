@@ -1,0 +1,3 @@
+[submodule "blender-addons"]
+	path = blender-addons
+	url = https://git.blender.org/blender-addons.git
