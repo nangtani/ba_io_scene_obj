@@ -39,4 +39,9 @@ jobs:
     - name: Test Blender ${{ matrix.blender-version }} with pytest
       run: |
         git submodule update --init --recursive
+      if: startsWith(matrix.os, 'window')
+      run: |
+        rm ${{ matrix.bl-addon }}
+        cp -r blender-addons/${{ matrix.bl-addon }} .
+      run: |
         python scripts/test_addon.py ${{ matrix.bl-addon }} ${{ matrix.blender-version }}
