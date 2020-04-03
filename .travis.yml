@@ -10,12 +10,10 @@ env:
         - BLENDER_CACHE=$HOME/.cache/blender
         - BL_ADDON=io_scene_obj
     matrix:
-#         - BLENDER_VERSION="2.78c"
-#         - BLENDER_VERSION="2.79b"
-#         - BLENDER_VERSION="2.80"
-#         - BLENDER_VERSION="2.81a"
+        - BLENDER_VERSION="2.80"
+        - BLENDER_VERSION="2.81a"
         - BLENDER_VERSION="2.82a"
-#         - BLENDER_VERSION="2.83"
+        - BLENDER_VERSION="2.83"
 
 language: python
 python:
@@ -45,6 +43,7 @@ install:
 script:
     - cd ${TRAVIS_BUILD_DIR}
     #- make flake8
+    #- flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
     - python3 ${TRAVIS_BUILD_DIR}/scripts/test_addon.py ${BL_ADDON} ${BLENDER_VERSION}
     
 after_success:
