@@ -10,7 +10,6 @@ env:
         - BLENDER_CACHE=$HOME/.cache/blender
         - BL_ADDON=io_scene_obj
     matrix:
-        - BLENDER_VERSION="2.80"
         - BLENDER_VERSION="2.81a"
         - BLENDER_VERSION="2.82a"
         - BLENDER_VERSION="2.83"
