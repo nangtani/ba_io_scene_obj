@@ -35,7 +35,7 @@ before_install:
 
 install:
     - cd $TRAVIS_BUILD_DIR
-    - python3 --version
+    - python --version
     - pip install -r blender_requirements.txt
     - pip list
 
@@ -43,7 +43,7 @@ script:
     - cd ${TRAVIS_BUILD_DIR}
     #- make flake8
     #- flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
-    - python3 ${TRAVIS_BUILD_DIR}/scripts/test_addon.py ${BL_ADDON} ${BLENDER_VERSION}
+    - python ${TRAVIS_BUILD_DIR}/scripts/test_addon.py ${BL_ADDON} ${BLENDER_VERSION}
     
 after_success:
     - bash <(curl -s https://codecov.io/bash)

@@ -23,4 +23,5 @@ def main():
         exit_val = 1
     sys.exit(exit_val)
 
-main()
+if __name__ == "__main__":
+    main()
