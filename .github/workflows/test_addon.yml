@@ -39,11 +39,12 @@ jobs:
     - name: Update Git Submodules
       run: |
         git submodule update --init --recursive
-    - name: Windows fix for links
-      if: startsWith(matrix.os, 'window')
-      run: |
-        rm ${{ matrix.bl-addon }}
-        cp -r blender-addons/${{ matrix.bl-addon }} .
+    
+    #- name: Windows fix for links
+    #  if: startsWith(matrix.os, 'window')
+    #  run: |
+    #    rm ${{ matrix.bl-addon }}
+    #    cp -r blender-addons/${{ matrix.bl-addon }} .
     - name: Test Blender ${{ matrix.blender-version }} with pytest
       run: |
         python scripts/test_addon.py ${{ matrix.bl-addon }} ${{ matrix.blender-version }}
